@@ -1,0 +1,48 @@
+$buttonPrefixCls: picasso-btn;
+@mixin btn-type($color, $background) {
+  color: $color;
+  background-color: $background;
+}
+@mixin btn-size($height) {
+  height: $height;
+}
+
+.#{$buttonPrefixCls} {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $btn-padding-middle;
+  height: $btn-height-middle;
+  border: none;
+  border-radius: $border-radius-middle;
+  &-primary {
+    @include btn-type($white, $primary);
+    &.#{$buttonPrefixCls}-active {
+      color: hsla(0,0%,100%,.65);
+      background-color: $blue-active;
+    }
+  }
+  &-warning {
+    @include btn-type($white, $warning);
+    &.#{$buttonPrefixCls}-active {
+      color: hsla(0,0%,100%,.65);
+      background-color: $red-active;
+    }
+  }
+  &-ghost {
+    border: 1px solid $gray-200;
+    &.#{$buttonPrefixCls}-active {
+      background-color: $white-active;
+    }
+  }
+  &-small {
+    @include btn-size($btn-height-small);
+  }
+  &-middle {
+    @include btn-size($btn-height-middle);
+  }
+  &-large {
+    @include btn-size($btn-height-large);
+  }
+}
