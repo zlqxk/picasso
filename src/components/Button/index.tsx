@@ -7,16 +7,21 @@ interface ButtonProps extends ButtonPropsType {
   className?: string;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-  inline?: boolean;
-  icon?: React.ReactNode;
-  activeClassName?: string;
-  activeStyle?: boolean | React.CSSProperties;
   style?: React.CSSProperties;
   prefixCls?: string;
 }
 
 const Button: React.FC<ButtonProps> = props => {
-  const { className, type, size, disabled, onClick, prefixCls, style } = props;
+  const {
+    className,
+    type,
+    size,
+    disabled,
+    onClick,
+    prefixCls,
+    style,
+    ...restProps
+  } = props;
   const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${type}`]: type,
     [`${prefixCls}-${size}`]: size,
@@ -29,6 +34,7 @@ const Button: React.FC<ButtonProps> = props => {
         onClick={disabled ? undefined : onClick}
         style={style}
         role="button"
+        {...restProps}
         className={classes}
       >
         {props.children}

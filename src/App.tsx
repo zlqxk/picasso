@@ -3,7 +3,7 @@ import Button from './components/Button'
 function App() {
   return (
     <div style={{padding: '20px'}} className="App">
-      <Button inline onClick={() => {console.log(123)}} disabled>123</Button>
+      <Button onClick={() => {console.log(123)}} disabled>123</Button>
       <br/>
       <Button disabled type={"ghost"}>123</Button>
       <br/>
