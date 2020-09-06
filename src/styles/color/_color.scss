@@ -24,6 +24,7 @@ $green: #52c41a !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
+// 配置颜色
 $primary: $blue !default;
 $secondaryl: $gray-600 !default;
 $success: $green !default;
@@ -31,3 +32,16 @@ $info: $cyan !default;
 $warning: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
+
+// 字体颜色
+$color-text-base: $black; // 基本
+$color-text-base-inverse: $white; // 基本 - 反色
+
+// 背景色
+$fill-base: #fff;                   // 组件默认背景
+$fill-body: #f5f5f9;                // 页面背景
+$fill-tap: #ddd;                    // 组件默认背景 - 按下
+$fill-disabled: #ddd;               // 通用失效背景
+$fill-mask: rgba(0, 0, 0, 0.4);     // 遮罩背景
+$color-icon-base: #ccc;             // 许多小图标的背景，比如一些小圆点，加减号
+$fill-grey: #f7f7f7;

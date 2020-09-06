@@ -12,21 +12,20 @@ $buttonPrefixCls: picasso-btn;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: $btn-padding-middle;
   height: $btn-height-middle;
   border: none;
   border-radius: $border-radius-middle;
   &-primary {
     @include btn-type($white, $primary);
     &.#{$buttonPrefixCls}-active {
-      color: hsla(0,0%,100%,.65);
+      color: lighten($color-text-base, 80%);
       background-color: $blue-active;
     }
   }
   &-warning {
     @include btn-type($white, $warning);
     &.#{$buttonPrefixCls}-active {
-      color: hsla(0,0%,100%,.65);
+      color: lighten($color-text-base, 80%);
       background-color: $red-active;
     }
   }
@@ -34,6 +33,9 @@ $buttonPrefixCls: picasso-btn;
     border: 1px solid $gray-200;
     &.#{$buttonPrefixCls}-active {
       background-color: $white-active;
+    }
+    &.#{$buttonPrefixCls}-disabled {
+      color: lighten($color-text-base, 65%);
     }
   }
   &-small {
@@ -44,5 +46,9 @@ $buttonPrefixCls: picasso-btn;
   }
   &-large {
     @include btn-size($btn-height-large);
+  }
+  &-disabled {
+    opacity: 0.6;
+    color: lighten($color-text-base, 80%);
   }
 }

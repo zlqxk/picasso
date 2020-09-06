@@ -16,25 +16,21 @@ interface ButtonProps extends ButtonPropsType {
 }
 
 const Button: React.FC<ButtonProps> = props => {
-  const {
-    className,
-    type,
-    size,
-    disabled,
-    onClick,
-    inline,
-    prefixCls
-  } = props;
-  const classes = classNames(prefixCls, {
+  const { className, type, size, disabled, onClick, prefixCls, style } = props;
+  const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${type}`]: type,
-    [`${prefixCls}-${size}`]: size
+    [`${prefixCls}-${size}`]: size,
+    [`${prefixCls}-disabled`]: disabled,
   });
 
   return (
-    <TouchFeedback
-      activeClassName={`${prefixCls}-active`}
-    >
-      <a role="button" className={classes}>
+    <TouchFeedback activeClassName={`${prefixCls}-active`} disabled={disabled}>
+      <a
+        onClick={disabled ? undefined : onClick}
+        style={style}
+        role="button"
+        className={classes}
+      >
         {props.children}
       </a>
     </TouchFeedback>
@@ -44,6 +40,7 @@ const Button: React.FC<ButtonProps> = props => {
 Button.defaultProps = {
   type: "primary",
   size: "middle",
-  prefixCls: 'picasso-btn'
+  prefixCls: "picasso-btn",
+  disabled: false,
 };
 export default Button;

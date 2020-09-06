@@ -1,11 +1,12 @@
+$base-size: 1px;
 // 字体
-$font-size-base: 18px !default; // Assumes the brow
+$font-size-base: 18 * $base-size !default; // Assumes the brow
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 // 圆角
-$border-radius-small: 4px !default; 
-$border-radius-middle: 6px !default; 
-$border-radius-large: 8px !default; 
+$border-radius-small: 4 * $base-size !default;
+$border-radius-middle: 6 * $base-size !default;
+$border-radius-large: 8 * $base-size !default;
 // 自重
 $font-weight-lighter: lighter !default;
 $font-weight-light: 300 !default;
@@ -36,11 +37,9 @@ $body-color: $gray-900 !default;
 $body-text-align: null !default;
 
 // button
-$btn-padding-small: -4px !default;
-$btn-padding-middle: 0px !default;
-$btn-padding-large: 10px !default;
-$btn-height-small: 42px !default;
-$btn-height-middle: 47px !default;
-$btn-height-large: 52px !default;
-
-
+$btn-padding-small: 4 * $base-size !default;
+$btn-padding-middle: 8 * $base-size !default;
+$btn-padding-large: 10 * $base-size !default;
+$btn-height-small: 42 * $base-size !default;
+$btn-height-middle: 47 * $base-size !default;
+$btn-height-large: 52 * $base-size !default;

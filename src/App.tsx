@@ -3,17 +3,17 @@ import Button from './components/Button'
 function App() {
   return (
     <div style={{padding: '20px'}} className="App">
-      <Button>123</Button>
+      <Button inline onClick={() => {console.log(123)}} disabled>123</Button>
       <br/>
-      <Button type={"ghost"}>123</Button>
+      <Button disabled type={"ghost"}>123</Button>
       <br/>
-      <Button type={"warning"}>123</Button>
+      <Button onClick={() => {console.log(123)}} type={"warning"}>123</Button>
       <br/>
       <Button>123</Button>
       <br/>
       <Button size={"small"} type={"ghost"}>123</Button>
       <br/>
-      <Button size={"large"} type={"warning"}>123</Button>
+      <Button disabled size={"large"} type={"warning"}>123</Button>
     </div>
   );
 }
