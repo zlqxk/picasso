@@ -38,6 +38,7 @@ $body-text-align: null !default;
 
 // button
 $btn-padding: 5 * $base-size !default;
+$btn-min-width: 42 * $base-size !default;
 $btn-height-small: 42 * $base-size !default;
 $btn-height-middle: 47 * $base-size !default;
 $btn-height-large: 52 * $base-size !default;

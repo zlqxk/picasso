@@ -55,5 +55,7 @@ $buttonPrefixCls: picasso-btn;
     display: inline-block;
     height: auto;
     padding: $btn-padding $btn-padding * 2;
+    min-width: $btn-min-width;
+    text-align: center;
   }
 }
