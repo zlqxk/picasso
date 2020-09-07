@@ -37,9 +37,7 @@ $body-color: $gray-900 !default;
 $body-text-align: null !default;
 
 // button
-$btn-padding-small: 4 * $base-size !default;
-$btn-padding-middle: 8 * $base-size !default;
-$btn-padding-large: 10 * $base-size !default;
+$btn-padding: 5 * $base-size !default;
 $btn-height-small: 42 * $base-size !default;
 $btn-height-middle: 47 * $base-size !default;
 $btn-height-large: 52 * $base-size !default;

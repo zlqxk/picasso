@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonPropsType {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   style?: React.CSSProperties;
   prefixCls?: string;
+  inline?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = props => {
@@ -20,12 +21,14 @@ const Button: React.FC<ButtonProps> = props => {
     onClick,
     prefixCls,
     style,
+    inline,
     ...restProps
   } = props;
   const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${type}`]: type,
     [`${prefixCls}-${size}`]: size,
     [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-inline`]: inline,
   });
 
   return (
@@ -48,5 +51,6 @@ Button.defaultProps = {
   size: "middle",
   prefixCls: "picasso-btn",
   disabled: false,
+  inline: false
 };
 export default Button;

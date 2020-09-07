@@ -51,4 +51,9 @@ $buttonPrefixCls: picasso-btn;
     opacity: 0.6;
     color: lighten($color-text-base, 80%);
   }
+  &-inline {
+    display: inline-block;
+    height: auto;
+    padding: $btn-padding $btn-padding * 2;
+  }
 }
