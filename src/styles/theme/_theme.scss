@@ -1,8 +1,8 @@
 $base-size: 1px;
 // 字体
 $font-size-base: 18 * $base-size !default; // Assumes the brow
-$font-size-lg: $font-size-base * 1.25 !default;
-$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-large: $font-size-base * 1.25 !default;
+$font-size-small: $font-size-base * 0.875 !default;
 // 圆角
 $border-radius-small: 4 * $base-size !default;
 $border-radius-middle: 6 * $base-size !default;
@@ -42,3 +42,14 @@ $btn-min-width: 42 * $base-size !default;
 $btn-height-small: 42 * $base-size !default;
 $btn-height-middle: 47 * $base-size !default;
 $btn-height-large: 52 * $base-size !default;
+
+// input 
+$input-underline-border: $base-size solid $gray-500;
+$input-height-small: 36 * $base-size !default;
+$input-height-middle: 40 * $base-size !default;
+$input-height-large: 44 * $base-size !default;
+$input-radius-small: 18 * $base-size !default;
+$input-radius-middle: 20 * $base-size !default;
+$input-radius-large: 22 * $base-size !default;
+$input-text-indent: 10 * $base-size !default;
+$input-margin: 5 * $base-size !default;
