@@ -1,0 +1,30 @@
+$whiteSpacePrefixCls: picasso-white-space;
+$size: xs, sm, md, lg, xl;
+
+.#{$whiteSpacePrefixCls} {
+  &.xs {
+    width: 100%;
+    height: $white-space-height-xs;
+    background-color: none;
+  }
+  &.sm {
+    width: 100%;
+    height: $white-space-height-sm;
+    background-color: none;
+  }
+  &.md {
+    width: 100%;
+    height: $white-space-height-md;
+    background-color: none;
+  }
+  &.lg {
+    width: 100%;
+    height: $white-space-height-lg;
+    background-color: none;
+  }
+  &.xl {
+    width: 100%;
+    height: $white-space-height-xl;
+    background-color: none;
+  }
+}
