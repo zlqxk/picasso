@@ -2,7 +2,7 @@ import React from "react";
 import { InputPropsType } from "./PropsType";
 
 interface InputProps extends InputPropsType {
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const Input: React.FC<InputProps> = props => {
   const { onBlur, onFocus, type, placeholder, onChange } = props;

@@ -40,4 +40,12 @@ $inputPrefixClsControl: picasso-input-control;
       margin: $input-margin;
     }
   }
+  &-group {
+    height: inherit;
+    display: flex;
+    align-items: baseline;
+    .#{$inputPrefixClsControl} {
+      flex: 1;
+    }
+  }
 }

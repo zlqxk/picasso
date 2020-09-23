@@ -4,17 +4,17 @@ import "./index.scss";
 const InputDemo = () => {
   return (
     <div>
-      <Input onChange={(value) => {console.log(value)}} placeholder="123" />
+      <Input addonBefore={<p style={{marginLeft: '12px'}}>短信：</p>} addonAfter={<p>获取验证码</p>} placeholder="123" />
       <br />
-      <Input onBlur={(value) => {console.log(value)}} size="middle" placeholder="123" />
+      <Input size="middle" placeholder="123" />
       <br />
       <Input size="large" placeholder="123" />
       <br />
-      <Input fashion="stick" placeholder="123" />
+      <Input fashion="stick" />
       <br />
-      <Input fashion="stick" size="small" placeholder="123" />
+      <Input fashion="stick" size="small" />
       <br />
-      <Input fashion="stick" size="large" placeholder="123" className="zl" />
+      <Input fashion="stick" size="large" className="xx" />
     </div>
   );
 };

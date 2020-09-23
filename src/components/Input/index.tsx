@@ -1,7 +1,8 @@
 import React from "react";
-import Input from "./Input";
 import { InputPropsType } from "./PropsType";
 import classNames from "classnames";
+import Input from "./Input";
+import ExtraEle from "./extraEle";
 
 interface InputItem extends InputPropsType {
   prefixCls?: string;
@@ -9,7 +10,9 @@ interface InputItem extends InputPropsType {
   fashion?: "underline" | "stick";
   size?: "large" | "middle" | "small";
   onChange?: (value: string) => void;
-  disabled?: boolean
+  disabled?: boolean;
+  addonBefore?: React.ReactNode;
+  addonAfter?: React.ReactNode;
 }
 
 const InputItem: React.FC<InputItem> = props => {
@@ -22,12 +25,14 @@ const InputItem: React.FC<InputItem> = props => {
     size,
     placeholder,
     onChange,
-    disabled
+    disabled,
+    addonBefore,
+    addonAfter
   } = props;
   const classes = classNames(prefixCls, className, {
     [`${prefixCls}-${fashion}`]: fashion,
     [`${prefixCls}-${size}`]: size,
-    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-disabled`]: disabled
   });
   const controlCls = `${prefixCls}-control`;
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +41,12 @@ const InputItem: React.FC<InputItem> = props => {
     onChange && onChange(value);
   };
   return (
-    <div className={classes}>
+    <ExtraEle
+      addonBefore={addonBefore}
+      addonAfter={addonAfter}
+      prefixCls={prefixCls}
+      className={classes}
+    >
       <div className={controlCls}>
         <Input
           type="text"
@@ -46,7 +56,7 @@ const InputItem: React.FC<InputItem> = props => {
           onChange={onInputChange}
         />
       </div>
-    </div>
+    </ExtraEle>
   );
 };
 
