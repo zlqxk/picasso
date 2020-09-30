@@ -1,7 +1,11 @@
 @import "./color/color";
 @import "./theme/theme";
 @import "./reset";
-// 组件样式
+// button
 @import "../components/Button/style/index.scss";
-// 输入框
+// input
 @import "../components/Input/style/index.scss";
+// white-space
+// @import "../components/White-Space/style/index.scss";
+// toast
+@import "../components/Toast/style/index.scss"

@@ -1,0 +1,18 @@
+$toastPrefixCls: 'picasso-toast';
+
+.#{$toastPrefixCls} {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &-content {
+    max-width: $toast-max-width;
+    max-height: $toast-max-height;
+    padding: $toast-padding;
+    background-color: $toast-background;
+    color: $toast-color;
+    border-radius: $border-radius-middle;
+    overflow: auto;
+    word-break: break-all;
+  }
+}

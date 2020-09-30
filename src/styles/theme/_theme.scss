@@ -1,6 +1,6 @@
 $base-size: 1px;
 // 字体
-$font-size-base: 18 * $base-size !default; // Assumes the brow
+$font-size-base: 16 * $base-size !default; // Assumes the brow
 $font-size-large: $font-size-base * 1.25 !default;
 $font-size-small: $font-size-base * 0.875 !default;
 // 圆角
@@ -53,3 +53,18 @@ $input-radius-middle: 20 * $base-size !default;
 $input-radius-large: 22 * $base-size !default;
 $input-text-indent: 10 * $base-size !default;
 $input-margin: 5 * $base-size !default;
+
+// white-space
+$white-space-height-xs: 16 * $base-size !default;
+$white-space-height-sm: 18 * $base-size !default;
+$white-space-height-md: 20 * $base-size !default;
+$white-space-height-lg: 22 * $base-size !default;
+$white-space-height-xl: 24 * $base-size !default;
+
+// toast
+$toast-max-height: 60 * $base-size !default;
+$toast-max-width: 160 * $base-size !default;
+$toast-padding: 10 * $base-size 20 * $base-size !default;
+$toast-background: $gray-700 !default;
+$toast-color: $white !default;
+

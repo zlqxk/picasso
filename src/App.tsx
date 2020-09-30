@@ -1,10 +1,10 @@
 import React from "react";
 // import ButtonDemo from './components/Button/demo';
-import InputDemo from "./components/Input/demo";
+import Demo from "./components/Toast/demo";
 function App() {
   return (
     <div style={{ padding: "24px" }}>
-      <InputDemo />
+      <Demo />
     </div>
   );
 }
