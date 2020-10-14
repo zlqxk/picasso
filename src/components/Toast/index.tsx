@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";
-interface ToastType {
-
-}
+interface ToastType {}
 
 const prefixCls = "picasso-toast";
-const classes = classNames(prefixCls)
+const classes = classNames(prefixCls);
 const Toast = (
   content: React.ReactNode,
   type: string,
@@ -15,27 +13,40 @@ const Toast = (
   mask = true
 ) => {
   const container = document.createElement("div");
-  container.className = classes
+  const masker = document.createElement("div");
+  container.className = classes;
+  masker.className = `${prefixCls}-mask`;
   const body = document.getElementsByTagName("body")[0];
   // 声明挂载元素
-  const App: React.FC<ToastType> = (props) => {
-    return <div className={`${classes}-content`}>{content}</div>;
-  }
+  const App: React.FC<ToastType> = () => {
+    return <div className={`${prefixCls}-content`}>{content}</div>;
+  };
+  mask && body.appendChild(masker);
   body.appendChild(container);
-  ReactDOM.render(transformClass(App), container);
+  ReactDOM.render(<App />, container);
   setTimeout(() => {
-    ReactDOM.unmountComponentAtNode(container);
-    body.removeChild(container);
+    container.className = classNames(classes, "appear");
+  });
+  if (duration < 0) return;
+  setTimeout(() => {
+    container.className = classes;
+    setTimeout(() => {
+      ReactDOM.unmountComponentAtNode(container);
+      mask && body.removeChild(masker);
+      body.removeChild(container);
+      onClose && onClose();
+    }, 200);
   }, duration * 1000);
 };
 
-const transformClass = (Node: React.FC<ToastType>) => {
-  return (
-    <div className="123">
-      <Node />
-    </div>
-  )
-}
+const info = (
+  content: React.ReactNode,
+  duration?: number,
+  onClose?: () => void,
+  mask?: boolean
+) => {
+  Toast(content, "info", duration, onClose, mask);
+};
 
 const success = (
   content: React.ReactNode,
@@ -46,6 +57,8 @@ const success = (
   Toast(content, "success", duration, onClose, mask);
 };
 
+
 export default {
-  success,
+  info,
+  success
 };

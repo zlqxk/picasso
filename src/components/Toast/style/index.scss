@@ -1,10 +1,14 @@
-$toastPrefixCls: 'picasso-toast';
+$toastPrefixCls: "picasso-toast";
+$toastMaskPrefixCls: "picasso-toast-mask";
 
 .#{$toastPrefixCls} {
   position: fixed;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  transition: all 0.2s ease-in-out;
+  transform: translate(-50%, -40%);
+  z-index: 1;
+  opacity: 0;
   &-content {
     max-width: $toast-max-width;
     max-height: $toast-max-height;
@@ -14,5 +18,17 @@ $toastPrefixCls: 'picasso-toast';
     border-radius: $border-radius-middle;
     overflow: auto;
     word-break: break-all;
+    text-align: center;
   }
+  &.appear {
+    opacity: $toast-opacity;
+  }
+}
+.#{$toastMaskPrefixCls} {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }

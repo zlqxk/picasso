@@ -1,17 +1,16 @@
 import React from 'react';
 import Toast from '../index';
+import Button from '../../Button'
 
 const Demo = () => {
-  const success = () => {
-    Toast.success('系统错误', 200)
-  }
-  const success2 = () => {
-    Toast.success('大家好，我是渣渣辉，大家好，我是渣渣辉，大家好，我是渣渣辉', 200)
+  const info = () => {
+    Toast.info('系统错大神阿萨德阿萨德误', 2, () => {
+      console.log(1)
+    }, false)
   }
   return (
     <div>
-      <button onClick={success}>success</button>
-      <button onClick={success2}>success</button>
+      <Button onClick={info}>我是info</Button>
     </div>
   )
 }
