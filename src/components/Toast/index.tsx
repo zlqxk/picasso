@@ -8,8 +8,10 @@ const typeMap = {
   info: null,
   loading: <Loading />,
 };
+
 let toastList: Array<HTMLElement> = [];
 let timeoutList: Array<any> = [];
+
 const prefixCls = "picasso-toast";
 const classes = classNames(prefixCls);
 const body = document.getElementsByTagName("body")[0];
@@ -23,6 +25,7 @@ const Toast = (
 ) => {
   const container = createElement("div", classes);
   const masker = createElement("div", `${prefixCls}-mask`);
+
   // 声明挂载元素
   const App: React.FC = () => {
     return (
@@ -32,6 +35,7 @@ const Toast = (
       </div>
     );
   };
+
   if (mask) {
     toastList.push(masker);
     body.appendChild(masker);
@@ -42,6 +46,7 @@ const Toast = (
   setTimeout(() => {
     container.className = classNames(classes, "appear");
   });
+
   let timeoutId = setTimeout(() => {
     if (duration >= 0) {
       container.className = classes;
@@ -57,6 +62,7 @@ const Toast = (
       }, 200);
     }
   }, duration * 1000);
+  
   timeoutList.push(timeoutId);
   // TODO 暂时返回null
   return null;
