@@ -62,10 +62,10 @@ $white-space-height-lg: 22 * $base-size !default;
 $white-space-height-xl: 24 * $base-size !default;
 
 // toast
-$toast-max-height: 60 * $base-size !default;
+$toast-max-height: 160 * $base-size !default;
 $toast-max-width: 160 * $base-size !default;
 $toast-padding: 10 * $base-size 20 * $base-size !default;
 $toast-background: $gray-700 !default;
 $toast-color: $white !default;
-$toast-opacity: 0.8 !default;
+$toast-opacity: 0.88 !default;
 

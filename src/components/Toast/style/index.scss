@@ -6,7 +6,7 @@ $toastMaskPrefixCls: "picasso-toast-mask";
   left: 50%;
   top: 40%;
   transition: all 0.2s ease-in-out;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 0;
   &-content {
@@ -22,6 +22,7 @@ $toastMaskPrefixCls: "picasso-toast-mask";
   }
   &.appear {
     opacity: $toast-opacity;
+    transform: translate(-50%, -40%);
   }
 }
 .#{$toastMaskPrefixCls} {
