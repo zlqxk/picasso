@@ -1,0 +1,100 @@
+$modalPrefixCls: "picasso-modal";
+$modalMaskPrefixCls: "picasso-modal-mask";
+$modalBoxPrefixCls: "picasso-modal-box";
+
+@keyframes appear {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.#{$modalBoxPrefixCls} {
+  .#{$modalPrefixCls} {
+    min-width: $modal-min-width;
+    min-height: $modal-min-height;
+    border-radius: $modal-border-radius;
+    padding-top: $modal-padding-top;
+    position: fixed;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #ffffff;
+    opacity: 0;
+    &.appear {
+      opacity: 1;
+      animation: appear 0.2s ease;
+    }
+    &.hide {
+      opacity: 1;
+      animation: hide 0.2s ease-in;
+    }
+    &-title {
+      font-size: 18 * $base-size;
+      color: $modal-color;
+      text-align: center;
+      padding: 6 * $base-size 15 * $base-size 15 * $base-size;
+    }
+    &-content {
+      font-size: 15 * $base-size;
+      color: #888;
+      line-height: 1.5;
+      padding: 0 15 * $base-size 25 * $base-size;
+      overflow: auto;
+      text-align: center;
+    }
+    &-footer {
+      border-top: 1px solid $gray-200;
+      display: flex;
+      justify-content: center;
+      &-btn {
+        height: 55 * $base-size;
+        line-height: 55 * $base-size;
+        flex: 1;
+        text-align: center;
+        &.active {
+          background-color: $white-active;
+        }
+      }
+      &-border {
+        border-left: 1px solid $gray-200;
+      }
+    }
+  }
+  .#{$modalMaskPrefixCls} {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba($color: $black, $alpha: 0);
+    transition: all 0.2s ease;
+    &.appear {
+      background-color: $modal-background;
+    }
+    &.hide {
+      background-color: rgba($color: $black, $alpha: 0);
+    }
+  }
+}

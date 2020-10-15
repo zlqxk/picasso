@@ -69,3 +69,11 @@ $toast-background: $gray-700 !default;
 $toast-color: $white !default;
 $toast-opacity: 0.88 !default;
 
+// modal
+$modal-background: rgba(0, 0, 0, 0.4) !default;
+$modal-min-width: 270 * $base-size !default;
+$modal-min-height: 144 * $base-size !default;
+$modal-border-radius: $border-radius-middle !default;
+$modal-padding-top: 15 * $base-size !default;
+$modal-font-size: 18 * $base-size !default;
+$modal-color: $black !default;
