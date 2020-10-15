@@ -7,7 +7,7 @@ const prefixCls = "picasso-modal";
 let firstRender = true;
 
 const Modal: React.FC<ModalProps> = props => {
-  const { visible, title, children, footer } = props;
+  const { visible, title, children, footer, onClose } = props;
   const [appearState, setAppearState] = useState<boolean>(false);
   const [visibleState, setVisibleState] = useState<boolean>(false);
 
@@ -38,6 +38,15 @@ const Modal: React.FC<ModalProps> = props => {
     }
   }, [visible]);
 
+  const click = (e: React.MouseEvent<HTMLDivElement>, onClick?: () => void) => {
+    onClose && onClose(
+      title,
+      children,
+      footer
+    )
+    onClick && onClick()
+  };
+
   const renderFooter = () => {
     return (
       Array.isArray(footer) &&
@@ -47,7 +56,12 @@ const Modal: React.FC<ModalProps> = props => {
         });
         return (
           <TouchFeedback key={index} activeClassName="active">
-            <div onClick={item.onClick} className={classes}>
+            <div
+              onClick={e => {
+                click(e, item.onClick)
+              }}
+              className={classes}
+            >
               {item.text}
             </div>
           </TouchFeedback>
@@ -75,5 +89,6 @@ Modal.defaultProps = {
     { text: "确定", onClick: () => {} },
     { text: "取消", onClick: () => {} },
   ],
+  onClose: () => {},
 };
 export default Modal;
